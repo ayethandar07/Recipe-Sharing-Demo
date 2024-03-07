@@ -2,6 +2,7 @@
 using MyDemo.UI.Data;
 using MyDemo.UI.Models;
 using System.Diagnostics;
+using System.Linq;
 
 namespace MyDemo.UI.Controllers
 {
@@ -16,9 +17,16 @@ namespace MyDemo.UI.Controllers
             _recipeData = recipeData;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(RecipeData recipeData = null)
         {
-            return View(_recipeData);
+            if (recipeData == null)
+            {
+                return View(_recipeData);
+            }
+            else
+            {
+                return View(recipeData);
+            }
         }
 
         public IActionResult Privacy()
@@ -30,6 +38,24 @@ namespace MyDemo.UI.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        [HttpGet]
+        public IActionResult Search(string searchTerm)
+        {
+            if (string.IsNullOrEmpty(searchTerm))
+            {
+                return RedirectToAction("Index");
+            }
+
+            var filteredRecipes = _recipeData.Recipes
+                                .Where(r => r.Title.Contains(searchTerm, StringComparison.OrdinalIgnoreCase) ||
+                                            r.Method.Any(m => m.Contains(searchTerm, StringComparison.OrdinalIgnoreCase)))
+                                .ToList();
+
+            var filteredRecipeData = new RecipeData { Recipes = filteredRecipes };
+
+            return View("Index", filteredRecipeData);
         }
     }
 }
