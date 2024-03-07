@@ -51,10 +51,10 @@
 @foreach ( var recipe in Model.Recipes)
 {
     <div class="container-fluid">
-        <div class="container py-5">
+        <div class="container py-4">
             <div class="row g-5 align-items-center">
                 <div class="col-12">
-                    <div class="card">
+                    <div class="card border-primary">
                         <div class="row no-gutters">
                             <div class="col-md-5">
                                 <img src="@recipe.ImageURL" class="card-img" alt="...">
@@ -62,11 +62,24 @@
                             <div class="col-md-7">
                                 <div class="card-body">
                                     <h5 class="card-title"> @recipe.Title </h5>
-                                    @foreach (var method in recipe.Method)
-                                    {
-                                        <p class="card-text"> @method</p>
+                                    <p> </p>
+
+                                    <p> ပါဝင်ပစ္စည်းများ - </p>
+                                    @{
+                                        int ingredientNo = 1;
                                     }
-                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                    @foreach (var ingredient in recipe.Ingredients)
+                                    {
+                                        <p class="card-text"> @ingredientNo. @ingredient.Name , @ingredient.Amount </p>
+                                        ingredientNo++;
+
+                                        if (ingredientNo > 3) break;
+                                    }
+
+                                    <p> ချက်ပြုတ်နည်း - </p>
+                                    <p class="card-text"> @recipe.Method[0] ...<a asp-action="Index" asp-controller="Detail">see more</a> </p>
+                                              
+                                    @* <a class="btn border border-secondary rounded-pill px-3 text-primary" asp-action="Index" asp-controller="Detail"><i class="fas fa-list-ul me-2 text-primary"></i> View details </a> *@
                                 </div>
                             </div>
                         </div>
@@ -77,12 +90,12 @@
     </div>
 }
 
-
+<!-- Pagination controls -->
 <div class="container-fluid">
     <div class="container py-5">
         <div class="row g-5 align-items-center">
             <div class="col-12">
-                <ul class="pagination">
+                <ul class="pagination justify-content-end">
                     @for (int i = 1; i <= Model.TotalPages; i++)
                     {
                         <li class="page-item @(Model.PageNumber == i ? "active" : "")">
@@ -94,8 +107,6 @@
         </div>
     </div>
 </div>
-<!-- Pagination controls -->
-
          
 <!-- Back to Top -->
 <a href="#" class="btn btn-primary border-3 border-primary rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
