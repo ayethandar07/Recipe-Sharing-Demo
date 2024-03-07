@@ -1,4 +1,4 @@
-﻿@model MyDemo.UI.Data.RecipeData
+﻿@model MyDemo.UI.Models.PaginationViewModel
 
 @{
     ViewData["Title"] = "Home Page";
@@ -76,6 +76,26 @@
         </div>
     </div>
 }
+
+
+<div class="container-fluid">
+    <div class="container py-5">
+        <div class="row g-5 align-items-center">
+            <div class="col-12">
+                <ul class="pagination">
+                    @for (int i = 1; i <= Model.TotalPages; i++)
+                    {
+                        <li class="page-item @(Model.PageNumber == i ? "active" : "")">
+                            <a class="page-link" href="@Url.Action("Index", new { page = i, pageSize = Model.PageSize })">@i</a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Pagination controls -->
+
          
 <!-- Back to Top -->
 <a href="#" class="btn btn-primary border-3 border-primary rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>

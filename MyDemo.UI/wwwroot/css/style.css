@@ -452,9 +452,9 @@
 
 
 /*** Single Page Start ***/
-.pagination {
+/*.pagination {
     display: inline-block;
-}
+}*/
   
 .pagination a {
     color: var(--bs-dark);

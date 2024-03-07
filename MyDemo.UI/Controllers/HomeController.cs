@@ -17,16 +17,25 @@ namespace MyDemo.UI.Controllers
             _recipeData = recipeData;
         }
 
-        public IActionResult Index(RecipeData recipeData = null)
+        public IActionResult Index(int page = 1, int pageSize = 5)
         {
-            if (recipeData == null)
+            var data = _recipeData.Recipes;
+
+            int totalItems = data.Count;
+            int totalPages = (int)Math.Ceiling((double)totalItems / pageSize);
+
+            var recipes = data.Skip((page - 1) * pageSize).Take(pageSize).ToList();
+
+            var model = new PaginationViewModel
             {
-                return View(_recipeData);
-            }
-            else
-            {
-                return View(recipeData);
-            }
+                Recipes = recipes,
+                PageNumber = page,
+                PageSize = pageSize,
+                TotalItems = totalItems,
+                TotalPages = totalPages
+            };
+
+            return View(model);            
         }
 
         public IActionResult Privacy()
@@ -41,7 +50,7 @@ namespace MyDemo.UI.Controllers
         }
 
         [HttpGet]
-        public IActionResult Search(string searchTerm)
+        public IActionResult Search(string searchTerm, int page = 1, int pageSize = 5)
         {
             if (string.IsNullOrEmpty(searchTerm))
             {
@@ -49,13 +58,27 @@ namespace MyDemo.UI.Controllers
             }
 
             var filteredRecipes = _recipeData.Recipes
-                                .Where(r => r.Title.Contains(searchTerm, StringComparison.OrdinalIgnoreCase) ||
-                                            r.Method.Any(m => m.Contains(searchTerm, StringComparison.OrdinalIgnoreCase)))
-                                .ToList();
+                    .Where(r => r.Title.Contains(searchTerm, StringComparison.OrdinalIgnoreCase) ||
+                    r.Method.Any(m => m.Contains(searchTerm, StringComparison.OrdinalIgnoreCase)));
 
-            var filteredRecipeData = new RecipeData { Recipes = filteredRecipes };
+            var paginatedRecipes = filteredRecipes
+                                   .Skip((page-1) * pageSize)
+                                   .Take(pageSize)
+                                   .ToList();
 
-            return View("Index", filteredRecipeData);
+            int totalItems = filteredRecipes.Count();
+            int totalPages = (int)Math.Ceiling((double)totalItems / pageSize);
+
+            var model = new PaginationViewModel
+            {
+                Recipes = paginatedRecipes,
+                PageNumber = page,
+                PageSize = pageSize,
+                TotalItems = totalItems,
+                TotalPages = totalPages
+            };
+
+            return View("Index", model);
         }
     }
 }
