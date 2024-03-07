@@ -76,5 +76,20 @@
         button.parent().parent().find('input').val(newVal);
     });
 
+    $(document).ready(function () {
+        // Function to toggle clearable class based on input value
+        $("#searchInput").on("input", function () {
+            $(this).toggleClass("clearable", $(this).val().trim() !== "");
+        });
+
+        // Function to clear search text
+        $("#searchInput").on("click", function () {
+            if ($(this).hasClass("clearable")) {
+                $(this).val("").focus();
+                $(this).removeClass("clearable");
+            }
+        });
+    });    
+
 })(jQuery);
 

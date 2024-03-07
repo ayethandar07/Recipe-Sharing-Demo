@@ -58,8 +58,9 @@ namespace MyDemo.UI.Controllers
             }
 
             var filteredRecipes = _recipeData.Recipes
-                    .Where(r => r.Title.Contains(searchTerm, StringComparison.OrdinalIgnoreCase) ||
-                    r.Method.Any(m => m.Contains(searchTerm, StringComparison.OrdinalIgnoreCase)));
+                    .Where(r => r.Title.Contains(searchTerm, StringComparison.OrdinalIgnoreCase));
+                    //||
+                    //r.Method.Any(m => m.Contains(searchTerm, StringComparison.OrdinalIgnoreCase)));
 
             var paginatedRecipes = filteredRecipes
                                    .Skip((page-1) * pageSize)
@@ -78,6 +79,7 @@ namespace MyDemo.UI.Controllers
                 TotalPages = totalPages
             };
 
+            ViewBag.SearchTerm = searchTerm;
             return View("Index", model);
         }
     }
