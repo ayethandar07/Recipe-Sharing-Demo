@@ -17,9 +17,14 @@ namespace MyDemo.UI.Controllers
             _recipeData = recipeData;
         }
 
-        public IActionResult Index(int page = 1, int pageSize = 5)
+        public IActionResult Index(string searchTerm = null, int page = 1, int pageSize = 5)
         {
             var data = _recipeData.Recipes;
+
+            if (!string.IsNullOrEmpty(searchTerm))
+            {
+                data = data.Where( r => r.Title.Contains(searchTerm, StringComparison.OrdinalIgnoreCase)).ToList(); 
+            }
 
             int totalItems = data.Count;
             int totalPages = (int)Math.Ceiling((double)totalItems / pageSize);
@@ -34,6 +39,8 @@ namespace MyDemo.UI.Controllers
                 TotalItems = totalItems,
                 TotalPages = totalPages
             };
+
+            ViewBag.SearchTerm = searchTerm;
 
             return View(model);            
         }
@@ -57,30 +64,7 @@ namespace MyDemo.UI.Controllers
                 return RedirectToAction("Index");
             }
 
-            var filteredRecipes = _recipeData.Recipes
-                    .Where(r => r.Title.Contains(searchTerm, StringComparison.OrdinalIgnoreCase));
-                    //||
-                    //r.Method.Any(m => m.Contains(searchTerm, StringComparison.OrdinalIgnoreCase)));
-
-            var paginatedRecipes = filteredRecipes
-                                   .Skip((page-1) * pageSize)
-                                   .Take(pageSize)
-                                   .ToList();
-
-            int totalItems = filteredRecipes.Count();
-            int totalPages = (int)Math.Ceiling((double)totalItems / pageSize);
-
-            var model = new PaginationViewModel
-            {
-                Recipes = paginatedRecipes,
-                PageNumber = page,
-                PageSize = pageSize,
-                TotalItems = totalItems,
-                TotalPages = totalPages
-            };
-
-            ViewBag.SearchTerm = searchTerm;
-            return View("Index", model);
+            return RedirectToAction("Index", new { searchTerm, page, pageSize });
         }
     }
 }

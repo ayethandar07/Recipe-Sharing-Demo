@@ -495,13 +495,13 @@
 }
 /*** Footer End ***/
 
-.search-input {
-    background-image: none; /* Remove default background image */
-}
+/*.search-input {
+    background-image: none;*/ /* Remove default background image */
+/*}
 
     .search-input.clearable {
         background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="rgba(108, 117, 125, 0.8)"><path d="M214.341 256L38.458 79.837c-9.373-9.373-24.569-9.373-33.941 0l-22.729 22.729c-9.373 9.373-9.373 24.569 0 33.941L157.661 256 5.788 407.89c-9.373 9.373-9.373 24.569 0 33.941l22.729 22.729c9.373 9.373 24.569 9.373 33.941 0L214.341 298.059 369.165 453.884c9.373 9.373 24.569 9.373 33.941 0l22.729-22.729c9.373-9.373 9.373-24.569 0-33.941L271.661 256l175.883-176.163c9.373-9.373 9.373-24.569 0-33.941l-22.729-22.729c-9.373-9.373-24.569-9.373-33.941 0L214.341 256z"/></svg>');
         background-repeat: no-repeat;
         background-position: right center;
         background-size: 1rem;
-    }
+    }*/
