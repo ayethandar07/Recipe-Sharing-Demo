@@ -3,7 +3,6 @@
 @{
     ViewData["Title"] = "Home Page";
 }
-
 @{
     string searchTerm = ViewBag.SearchTerm ?? "";
 }
@@ -78,11 +77,10 @@
 
                                         if (ingredientNo > 3) break;
                                     }
+                                    <p> .... </p>
 
                                     <p> ချက်ပြုတ်နည်း - </p>
-                                    <p class="card-text"> @recipe.Method[0] ...<a asp-action="Index" asp-controller="Detail">see more</a> </p>
-                                              
-                                    @* <a class="btn border border-secondary rounded-pill px-3 text-primary" asp-action="Index" asp-controller="Detail"><i class="fas fa-list-ul me-2 text-primary"></i> View details </a> *@
+                                    <p class="card-text"> @recipe.Method[0] ...<a asp-action="Index" asp-controller="Detail" asp-route-id="@recipe.Id">see more</a> </p>                                              
                                 </div>
                             </div>
                         </div>

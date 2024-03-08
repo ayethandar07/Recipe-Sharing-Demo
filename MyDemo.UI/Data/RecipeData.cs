@@ -11,6 +11,7 @@ namespace MyDemo.UI.Data
         {
             string jsondata = @"[
                     {
+                        ""Id"": 1,
                         ""Title"": ""ပုစွန်ထုပ်ကြော်"",
                         ""Ingredients"": [
                             {
@@ -48,6 +49,7 @@ namespace MyDemo.UI.Data
                         ""ImageURL"": ""/img/5.jpg""
                     },
                     {
+                        ""Id"": 2,
                         ""Title"": ""နံရိုးကင်"",
                         ""Ingredients"": [
                             {
@@ -98,6 +100,7 @@ namespace MyDemo.UI.Data
                         ""ImageURL"": ""/img/4.jpg""
                     },
                     {
+                        ""Id"": 3,                       
                         ""Title"": ""ကကတစ်ကြော်"",
                         ""Ingredients"": [
                             {
@@ -133,6 +136,7 @@ namespace MyDemo.UI.Data
                         ""ImageURL"": ""/img/3.jpg""
                     },
                     {
+                        ""Id"": 4,
                         ""Title"": ""မုန့်ညက်မှိုကြော်"",
                         ""Ingredients"": [
                             {
@@ -161,6 +165,7 @@ namespace MyDemo.UI.Data
                         ""ImageURL"": ""/img/2.jpg""
                     },
                     {
+                        ""Id"": 5,
                         ""Title"": ""ဝက်ရိုးစွပ်ပြုတ်"",
                         ""Ingredients"": [
                             {
@@ -194,6 +199,7 @@ namespace MyDemo.UI.Data
                         ""ImageURL"": ""/img/10.jpg""
                     },
                     {
+                        ""Id"": 6,
                         ""Title"": ""ချဥ်စပ်ထမင်းကြော်"",
                         ""Ingredients"": [
                             {
@@ -239,6 +245,7 @@ namespace MyDemo.UI.Data
                         ""ImageURL"": ""/img/6.jpg""
                     },
                     {
+                        ""Id"": 7,
                         ""Title"": ""မြေအိုးထမင်း"",
                         ""Ingredients"": [
                             {
@@ -288,6 +295,7 @@ namespace MyDemo.UI.Data
                         ""ImageURL"": ""/img/7.jpg""
                     },
                     {
+                        ""Id"": 8,
                         ""Title"": ""မှိုမြေအိုးထမင်း"",
                         ""Ingredients"": [
                             {
@@ -341,6 +349,7 @@ namespace MyDemo.UI.Data
                         ""ImageURL"": ""/img/8.jpg""
                     },
                     {
+                        ""Id"": 29,
                         ""Title"": ""ချဥ်စပ်ထမင်းကြော်"",
                         ""Ingredients"": [
                             {
@@ -386,6 +395,7 @@ namespace MyDemo.UI.Data
                         ""ImageURL"": ""/img/6.jpg""
                     },
                     {
+                        ""Id"": 9,
                         ""Title"": ""မြေအိုးထမင်း"",
                         ""Ingredients"": [
                             {
@@ -435,6 +445,7 @@ namespace MyDemo.UI.Data
                         ""ImageURL"": ""/img/7.jpg""
                     },
                     {
+                        ""Id"": 10,
                         ""Title"": ""မှိုမြေအိုးထမင်း"",
                         ""Ingredients"": [
                             {
@@ -488,6 +499,7 @@ namespace MyDemo.UI.Data
                         ""ImageURL"": ""/img/8.jpg""
                     },
                     {
+                        ""Id"": 11,
                         ""Title"": ""ချဥ်စပ်ထမင်းကြော်"",
                         ""Ingredients"": [
                             {
@@ -533,6 +545,7 @@ namespace MyDemo.UI.Data
                         ""ImageURL"": ""/img/6.jpg""
                     },
                     {
+                        ""Id"": 12,
                         ""Title"": ""မြေအိုးထမင်း"",
                         ""Ingredients"": [
                             {
@@ -582,6 +595,7 @@ namespace MyDemo.UI.Data
                         ""ImageURL"": ""/img/7.jpg""
                     },
                     {
+                        ""Id"": 13,
                         ""Title"": ""မှိုမြေအိုးထမင်း"",
                         ""Ingredients"": [
                             {
@@ -635,6 +649,7 @@ namespace MyDemo.UI.Data
                         ""ImageURL"": ""/img/8.jpg""
                     },
                     {
+                        ""Id"": 14,
                         ""Title"": ""ချဥ်စပ်ထမင်းကြော်"",
                         ""Ingredients"": [
                             {
@@ -680,6 +695,7 @@ namespace MyDemo.UI.Data
                         ""ImageURL"": ""/img/6.jpg""
                     },
                     {
+                        ""Id"": 15,
                         ""Title"": ""မြေအိုးထမင်း"",
                         ""Ingredients"": [
                             {
@@ -729,6 +745,7 @@ namespace MyDemo.UI.Data
                         ""ImageURL"": ""/img/7.jpg""
                     },
                     {
+                        ""Id"": 16,
                         ""Title"": ""မှိုမြေအိုးထမင်း"",
                         ""Ingredients"": [
                             {
@@ -782,6 +799,7 @@ namespace MyDemo.UI.Data
                         ""ImageURL"": ""/img/8.jpg""
                     },
                     {
+                        ""Id"": 17,
                         ""Title"": ""ချဥ်စပ်ထမင်းကြော်"",
                         ""Ingredients"": [
                             {
@@ -827,6 +845,7 @@ namespace MyDemo.UI.Data
                         ""ImageURL"": ""/img/6.jpg""
                     },
                     {
+                        ""Id"": 18,
                         ""Title"": ""မြေအိုးထမင်း"",
                         ""Ingredients"": [
                             {
@@ -876,6 +895,7 @@ namespace MyDemo.UI.Data
                         ""ImageURL"": ""/img/7.jpg""
                     },
                     {
+                        ""Id"": 19,
                         ""Title"": ""မှိုမြေအိုးထမင်း"",
                         ""Ingredients"": [
                             {
@@ -929,6 +949,7 @@ namespace MyDemo.UI.Data
                         ""ImageURL"": ""/img/8.jpg""
                     },
                     {
+                        ""Id"": 20,
                         ""Title"": ""ချဥ်စပ်ထမင်းကြော်"",
                         ""Ingredients"": [
                             {
@@ -974,6 +995,7 @@ namespace MyDemo.UI.Data
                         ""ImageURL"": ""/img/6.jpg""
                     },
                     {
+                        ""Id"": 21,
                         ""Title"": ""မြေအိုးထမင်း"",
                         ""Ingredients"": [
                             {
@@ -1023,6 +1045,7 @@ namespace MyDemo.UI.Data
                         ""ImageURL"": ""/img/7.jpg""
                     },
                     {
+                        ""Id"": 22,
                         ""Title"": ""မှိုမြေအိုးထမင်း"",
                         ""Ingredients"": [
                             {
@@ -1076,6 +1099,7 @@ namespace MyDemo.UI.Data
                         ""ImageURL"": ""/img/8.jpg""
                     },
                     {
+                        ""Id"": 23,
                         ""Title"": ""ချဥ်စပ်ထမင်းကြော်"",
                         ""Ingredients"": [
                             {
@@ -1121,6 +1145,7 @@ namespace MyDemo.UI.Data
                         ""ImageURL"": ""/img/6.jpg""
                     },
                     {
+                        ""Id"": 24,
                         ""Title"": ""မြေအိုးထမင်း"",
                         ""Ingredients"": [
                             {
@@ -1170,6 +1195,7 @@ namespace MyDemo.UI.Data
                         ""ImageURL"": ""/img/7.jpg""
                     },
                     {
+                        ""Id"": 25,
                         ""Title"": ""မှိုမြေအိုးထမင်း"",
                         ""Ingredients"": [
                             {
@@ -1223,6 +1249,7 @@ namespace MyDemo.UI.Data
                         ""ImageURL"": ""/img/8.jpg""
                     },
                     {
+                        ""Id"": 26,
                         ""Title"": ""ချဥ်စပ်ထမင်းကြော်"",
                         ""Ingredients"": [
                             {
@@ -1268,6 +1295,7 @@ namespace MyDemo.UI.Data
                         ""ImageURL"": ""/img/6.jpg""
                     },
                     {
+                        ""Id"": 27,
                         ""Title"": ""မြေအိုးထမင်း"",
                         ""Ingredients"": [
                             {
@@ -1317,6 +1345,7 @@ namespace MyDemo.UI.Data
                         ""ImageURL"": ""/img/7.jpg""
                     },
                     {
+                        ""Id"": 28,
                         ""Title"": ""မှိုမြေအိုးထမင်း"",
                         ""Ingredients"": [
                             {

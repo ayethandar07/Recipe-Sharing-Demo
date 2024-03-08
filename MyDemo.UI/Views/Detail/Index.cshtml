@@ -1,4 +1,4 @@
-﻿@model MyDemo.UI.Models.PaginationViewModel
+﻿@model MyDemo.UI.Models.Recipe
 
 @{
     ViewData["Title"] = "Detail Page";
@@ -26,14 +26,14 @@
             </button>
             <div class="collapse navbar-collapse bg-white justify-content-end" id="navbarCollapse">
                 <div class="d-flex m-3 ms-auto">
-                    <form method="get" asp-action="Search" asp-controller="Home" class="me-4">
+                    @* <form method="get" asp-action="Search" asp-controller="Home" class="me-4">
                         <div class="input-group me-4">
                             <input type="text" name="searchTerm" class="form-control border-secondary" placeholder="Search..." aria-label="Search" aria-describedby="searchButton">
                             <button type="submit" class="btn-search btn border border-secondary btn-md-square bg-white" id="searchButton" data-bs-toggle="modal" data-bs-target="#searchModal">
                                 <i class="fas fa-search text-primary"></i>
                             </button>
                         </div>
-                    </form>
+                    </form> *@
                     <a class="my-auto" asp-action="Index" asp-controller="Login">
                         <i class="fas fa-user fa-2x"></i>
                     </a>
@@ -44,6 +44,54 @@
 </div>
 <!-- Navbar End -->
 
-<div class="mt-lg-5 py-5">
+<div class="mt-lg-3 py-4">
     <br />
 </div>
+<div class="mt-lg-5 py-5">
+    <a class="my-auto" asp-action="Index" asp-controller="Home">
+        <i class="fa fa-arrow-left fa-2x"> Back </i>
+    </a>
+</div>
+<!-- Detail End -->
+<!-- Tastimonial Start -->
+<div class="container-fluid">
+    <div class="container">
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-6 col-lg-4">
+                <div class="service-item bg-secondary rounded border border-secondary">
+                    <img src="@Model.ImageURL" class="img-fluid rounded w-100" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="testimonial-header mt-3 mb-3">
+            <h5> @Model.Title  </h5>
+        </div>
+        <div class="owl-carousel testimonial-carousel">
+            <div class="testimonial-item img-border-radius bg-light rounded p-4">
+                <div class="position-relative">
+                    <div class="mb-4 pb-4 border-bottom border-secondary">
+                        <p class="mb-4"> ပါဝင်ပစ္စည်းများ - </p>
+
+                            @{
+                                int ingredientNo = 1;
+                            }
+                            @foreach (var ingredient in Model.Ingredients)
+                            {
+                                <p class="card-text"> @ingredientNo. @ingredient.Name , @ingredient.Amount </p>
+                                ingredientNo++;
+                            }
+                    </div>
+                    <div class="mb-4 pb-4">
+                        <p class="mb-4"> ချက်ပြုတ်နည်း - </p>
+
+                        @foreach (var method in Model.Method)
+                        {
+                            <p class="card-text"> @method </p>
+                        }
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Tastimonial End -->
